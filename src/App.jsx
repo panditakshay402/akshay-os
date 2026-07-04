@@ -8,6 +8,8 @@ import CustomCursor from "./components/ui/CustomCursor";
 
 import SmoothScroll from "./components/ui/SmoothScroll";
 
+import Loader from "./components/ui/Loader";
+
 import Hero from "./sections/Hero/Hero";
 
 import About from "./sections/About/About";
@@ -27,6 +29,8 @@ function App() {
     return (
 
         <>
+
+            <Loader />
 
             <SmoothScroll />
 
