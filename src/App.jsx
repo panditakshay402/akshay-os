@@ -6,6 +6,8 @@ import Background from "./components/ui/Background";
 
 import CustomCursor from "./components/ui/CustomCursor";
 
+import SmoothScroll from "./components/ui/SmoothScroll";
+
 import Hero from "./sections/Hero/Hero";
 
 import About from "./sections/About/About";
@@ -25,6 +27,8 @@ function App() {
     return (
 
         <>
+
+            <SmoothScroll />
 
             <Background />
 
