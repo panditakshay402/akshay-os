@@ -4,17 +4,35 @@ import { OrbitControls } from "@react-three/drei";
 
 import Lights from "../Environment/Lights";
 
+import Glow from "../Effects/Glow";
+
+import Fog from "../Environment/Fog";
+
+import CameraRig from "../Environment/CameraRig";
+
+import MouseGlow from "../Environment/MouseGlow";
+
+import Workspace from "../Environment/Workspace";
+
+import Room from "../Environment/Room";
+
+import GridFloor from "../Environment/GridFloor";
+
+import CeilingLights from "../Environment/CeilingLights";
+
+import HologramPanels from "../Environment/HologramPanels";
+
+import HologramRing from "../Environment/HologramRing";
+
+import HologramLogo from "../Environment/HologramLogo";
+
 import FloatingParticles from "../Environment/FloatingParticles";
 
 import FloatingCode from "../Environment/FloatingCode";
 
-import CyberDesk from "../Environment/CyberDesk";
+import CyberStars from "../Environment/Stars";
 
-import HologramPanels from "../Environment/HologramPanels";
-
-import AnimeDeveloper from "../Character/AnimeDeveloper";
-
-import Glow from "../Effects/Glow";
+import CodeRain from "../Environment/CodeRain";
 
 import "./Scene.css";
 
@@ -32,7 +50,7 @@ function Scene() {
 
                 camera={{
 
-                    position:[0,1.7,8],
+                    position:[0,2,9],
 
                     fov:42,
 
@@ -40,19 +58,39 @@ function Scene() {
 
             >
 
+                <Fog/>
+
                 <Glow/>
 
                 <Lights/>
 
-                <FloatingParticles/>
+                <CyberStars/>
 
-                <FloatingCode/>
+                <MouseGlow/>
 
-                <CyberDesk/>
+                <CameraRig>
 
-                <HologramPanels/>
+                    <Room/>
 
-                <AnimeDeveloper/>
+                    <GridFloor/>
+
+                    <CeilingLights/>
+
+                    <Workspace/>
+
+                    <HologramPanels/>
+
+                    <HologramRing/>
+
+                    <HologramLogo/>
+
+                    <FloatingParticles/>
+
+                    <FloatingCode/>
+
+                    <CodeRain/>
+
+                </CameraRig>
 
                 <OrbitControls
 
@@ -60,11 +98,9 @@ function Scene() {
 
                     enablePan={false}
 
-                    enableRotate={true}
-
                     autoRotate
 
-                    autoRotateSpeed={0.45}
+                    autoRotateSpeed={0.15}
 
                     minPolarAngle={Math.PI/2.7}
 
