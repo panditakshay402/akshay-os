@@ -1,0 +1,41 @@
+:root {
+
+  /* Background */
+
+  --bg-primary:#050816;
+  --bg-secondary:#0B1023;
+  --bg-card:#111827;
+
+  /* Text */
+
+  --text-primary:#FFFFFF;
+  --text-secondary:#94A3B8;
+
+  /* Accent */
+
+  --accent:#00E5FF;
+  --accent2:#8B5CF6;
+  --success:#00FFA3;
+
+  /* Borders */
+
+  --border:rgba(255,255,255,.08);
+
+  /* Radius */
+
+  --radius-sm:8px;
+  --radius-md:16px;
+  --radius-lg:24px;
+
+  /* Shadows */
+
+  --shadow:0 20px 60px rgba(0,0,0,.4);
+
+  /* Fonts */
+
+  --font-primary:
+  Inter,
+  Arial,
+  sans-serif;
+
+}
