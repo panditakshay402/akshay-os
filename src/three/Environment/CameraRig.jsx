@@ -1,5 +1,7 @@
 import { useFrame, useThree } from "@react-three/fiber";
+
 import { useRef } from "react";
+
 import * as THREE from "three";
 
 function CameraRig({ children }) {
@@ -7,6 +9,12 @@ function CameraRig({ children }) {
     const group = useRef();
 
     const { mouse, camera } = useThree();
+
+    const target = useRef(
+
+        new THREE.Vector3(0, 1.2, 0)
+
+    );
 
     useFrame(() => {
 
@@ -16,9 +24,9 @@ function CameraRig({ children }) {
 
             group.current.rotation.y,
 
-            mouse.x * 0.18,
+            mouse.x * 0.08,
 
-            0.05
+            0.025
 
         );
 
@@ -26,9 +34,9 @@ function CameraRig({ children }) {
 
             group.current.rotation.x,
 
-            -mouse.y * 0.08,
+            -mouse.y * 0.03,
 
-            0.05
+            0.025
 
         );
 
@@ -36,9 +44,9 @@ function CameraRig({ children }) {
 
             camera.position.x,
 
-            mouse.x * 0.6,
+            mouse.x * 0.45,
 
-            0.03
+            0.025
 
         );
 
@@ -46,13 +54,23 @@ function CameraRig({ children }) {
 
             camera.position.y,
 
-            1.7 + mouse.y * 0.3,
+            2.7 + mouse.y * 0.18,
 
-            0.03
+            0.025
 
         );
 
-        camera.lookAt(0,0.8,0);
+        camera.position.z = THREE.MathUtils.lerp(
+
+            camera.position.z,
+
+            9.8,
+
+            0.025
+
+        );
+
+        camera.lookAt(target.current);
 
     });
 

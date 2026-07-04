@@ -4,15 +4,15 @@ function CeilingLights() {
 
     const lights = [
 
-        [-4,8.6,-2],
+        [-4.5,8.8,-2],
 
-        [-2,8.6,-2],
+        [-2.25,8.8,-2],
 
-        [0,8.6,-2],
+        [0,8.8,-2],
 
-        [2,8.6,-2],
+        [2.25,8.8,-2],
 
-        [4,8.6,-2],
+        [4.5,8.8,-2],
 
     ];
 
@@ -28,17 +28,17 @@ function CeilingLights() {
 
                         key={index}
 
-                        speed={1 + index * .15}
-
-                        floatIntensity={.12}
+                        speed={0.5 + index * 0.05}
 
                         rotationIntensity={0}
+
+                        floatIntensity={0.04}
 
                     >
 
                         <group position={position}>
 
-                            {/* Housing */}
+                            {/* ================= HOUSING ================= */}
 
                             <mesh>
 
@@ -46,11 +46,11 @@ function CeilingLights() {
 
                                     args={[
 
-                                        .18,
+                                        0.22,
 
-                                        .18,
+                                        0.22,
 
-                                        .08,
+                                        0.12,
 
                                         32
 
@@ -60,25 +60,29 @@ function CeilingLights() {
 
                                 <meshStandardMaterial
 
-                                    color="#20242D"
+                                    color="#242A34"
 
                                     metalness={1}
 
-                                    roughness={.2}
+                                    roughness={0.18}
 
                                 />
 
                             </mesh>
 
-                            {/* RGB Glow */}
+                            {/* ================= LIGHT GLASS ================= */}
 
-                            <mesh position={[0,-.05,0]}>
+                            <mesh
+
+                                position={[0,-0.07,0]}
+
+                            >
 
                                 <sphereGeometry
 
                                     args={[
 
-                                        .11,
+                                        0.11,
 
                                         24,
 
@@ -110,17 +114,25 @@ function CeilingLights() {
 
                                     }
 
-                                    emissiveIntensity={3}
+                                    emissiveIntensity={2}
+
+                                    transparent
+
+                                    opacity={0.85}
 
                                 />
 
                             </mesh>
 
+                            {/* ================= SOFT LIGHT ================= */}
+
                             <pointLight
 
-                                intensity={3}
+                                intensity={1.2}
 
-                                distance={5}
+                                distance={6}
+
+                                decay={2}
 
                                 color={
 
