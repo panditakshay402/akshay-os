@@ -1,30 +1,44 @@
 import { Torus } from "@react-three/drei";
+
 import { useFrame } from "@react-three/fiber";
+
 import { useRef } from "react";
 
 function HologramRing() {
 
-    const ring = useRef();
+    const ringOne = useRef();
+
+    const ringTwo = useRef();
 
     useFrame((_, delta) => {
 
-        if (!ring.current) return;
+        if (ringOne.current) {
 
-        ring.current.rotation.z += delta * 0.6;
+            ringOne.current.rotation.y += delta * 0.35;
 
-        ring.current.rotation.x += delta * 0.15;
+            ringOne.current.rotation.x += delta * 0.08;
+
+        }
+
+        if (ringTwo.current) {
+
+            ringTwo.current.rotation.y -= delta * 0.5;
+
+            ringTwo.current.rotation.z += delta * 0.12;
+
+        }
 
     });
 
     return (
 
-        <group position={[0,1.2,0]}>
+        <group position={[0,1.45,-0.25]}>
 
             <Torus
 
-                ref={ring}
+                ref={ringOne}
 
-                args={[2.2,0.05,32,150]}
+                args={[1.35,0.03,24,100]}
 
             >
 
@@ -34,11 +48,11 @@ function HologramRing() {
 
                     emissive="#00E5FF"
 
-                    emissiveIntensity={2}
+                    emissiveIntensity={1.4}
 
                     transparent
 
-                    opacity={0.45}
+                    opacity={0.25}
 
                 />
 
@@ -46,9 +60,11 @@ function HologramRing() {
 
             <Torus
 
+                ref={ringTwo}
+
                 rotation={[Math.PI/2,0,0]}
 
-                args={[1.5,0.04,32,120]}
+                args={[0.95,0.025,24,90]}
 
             >
 
@@ -58,11 +74,11 @@ function HologramRing() {
 
                     emissive="#8B5CF6"
 
-                    emissiveIntensity={2}
+                    emissiveIntensity={1.2}
 
                     transparent
 
-                    opacity={0.35}
+                    opacity={0.22}
 
                 />
 

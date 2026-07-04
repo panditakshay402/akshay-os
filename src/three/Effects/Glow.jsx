@@ -1,18 +1,28 @@
-import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import {
+
+    EffectComposer,
+
+    Bloom,
+
+} from "@react-three/postprocessing";
 
 function Glow() {
 
     return (
 
-        <EffectComposer>
+        <EffectComposer
+
+            multisampling={4}
+
+        >
 
             <Bloom
 
-                intensity={1.3}
+                intensity={0.75}
 
-                luminanceThreshold={0.15}
+                luminanceThreshold={0.35}
 
-                luminanceSmoothing={0.9}
+                luminanceSmoothing={0.95}
 
                 mipmapBlur
 

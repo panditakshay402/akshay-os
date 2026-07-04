@@ -1,95 +1,125 @@
-import { Text, Float } from "@react-three/drei";
+import { Text, Torus } from "@react-three/drei";
 
-const symbols = [
-    "{ }",
-    "</>",
-    "const",
-    "=>",
-    "React",
-    "JS",
-    "HTML",
-    "CSS",
-    "Node",
-    "SQL",
-    "Git",
-    "API",
-    "npm",
-    "useState",
-    "useEffect",
-    "async",
-    "await",
-];
+import { useFrame } from "@react-three/fiber";
 
-function CodeRain() {
+import { useRef } from "react";
+
+function HologramLogo() {
+
+    const ringOne = useRef();
+
+    const ringTwo = useRef();
+
+    useFrame((_, delta) => {
+
+        if (ringOne.current) {
+
+            ringOne.current.rotation.y += delta * 0.28;
+
+        }
+
+        if (ringTwo.current) {
+
+            ringTwo.current.rotation.x += delta * 0.22;
+
+            ringTwo.current.rotation.z -= delta * 0.16;
+
+        }
+
+    });
 
     return (
 
-        <>
+        <group position={[0,3.25,-3.2]}>
 
-            {
+            <Text
 
-                symbols.map((symbol,index)=>(
+                fontSize={0.32}
 
-                    <Float
+                color="#00E5FF"
 
-                        key={index}
+                anchorX="center"
 
-                        speed={
+                anchorY="middle"
 
-                            1 + (index * 0.12)
+            >
 
-                        }
+                AKSHAY.OS
 
-                        rotationIntensity={0.2}
+            </Text>
 
-                        floatIntensity={2}
+            <Text
 
-                    >
+                position={[0,-0.24,0]}
 
-                        <Text
+                fontSize={0.08}
 
-                            position={[
+                color="#8B5CF6"
 
-                                (index % 4) * 2 - 3,
+                anchorX="center"
 
-                                6 - index * 0.7,
+                anchorY="middle"
 
-                                -4 - (index % 3)
+            >
 
-                            ]}
+                SOFTWARE ENGINEER
 
-                            fontSize={0.18}
+            </Text>
 
-                            color={
+            <Torus
 
-                                index % 2 === 0
+                ref={ringOne}
 
-                                ? "#00E5FF"
+                args={[0.75,0.02,20,80]}
 
-                                : "#8B5CF6"
+            >
 
-                            }
+                <meshStandardMaterial
 
-                            anchorX="center"
+                    color="#00E5FF"
 
-                            anchorY="middle"
+                    emissive="#00E5FF"
 
-                        >
+                    emissiveIntensity={1.3}
 
-                            {symbol}
+                    transparent
 
-                        </Text>
+                    opacity={0.22}
 
-                    </Float>
+                />
 
-                ))
+            </Torus>
 
-            }
+            <Torus
 
-        </>
+                ref={ringTwo}
+
+                rotation={[Math.PI/2,0,0]}
+
+                args={[0.56,0.018,20,80]}
+
+            >
+
+                <meshStandardMaterial
+
+                    color="#8B5CF6"
+
+                    emissive="#8B5CF6"
+
+                    emissiveIntensity={1.2}
+
+                    transparent
+
+                    opacity={0.18}
+
+                />
+
+            </Torus>
+
+        </group>
 
     );
 
 }
 
-export default CodeRain;
+export default HologramLogo;

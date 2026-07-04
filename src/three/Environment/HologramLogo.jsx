@@ -1,5 +1,7 @@
 import { Text, Torus } from "@react-three/drei";
+
 import { useFrame } from "@react-three/fiber";
+
 import { useRef } from "react";
 
 function HologramLogo() {
@@ -12,17 +14,15 @@ function HologramLogo() {
 
         if (ringOne.current) {
 
-            ringOne.current.rotation.y += delta * 0.45;
-
-            ringOne.current.rotation.x += delta * 0.15;
+            ringOne.current.rotation.y += delta * 0.28;
 
         }
 
         if (ringTwo.current) {
 
-            ringTwo.current.rotation.y -= delta * 0.65;
+            ringTwo.current.rotation.x += delta * 0.22;
 
-            ringTwo.current.rotation.z += delta * 0.18;
+            ringTwo.current.rotation.z -= delta * 0.16;
 
         }
 
@@ -30,11 +30,11 @@ function HologramLogo() {
 
     return (
 
-        <group position={[0,4.2,-2]}>
+        <group position={[0,3.25,-3.2]}>
 
             <Text
 
-                fontSize={0.45}
+                fontSize={0.32}
 
                 color="#00E5FF"
 
@@ -50,9 +50,9 @@ function HologramLogo() {
 
             <Text
 
-                position={[0,-0.45,0]}
+                position={[0,-0.24,0]}
 
-                fontSize={0.12}
+                fontSize={0.08}
 
                 color="#8B5CF6"
 
@@ -70,7 +70,7 @@ function HologramLogo() {
 
                 ref={ringOne}
 
-                args={[1.15,0.03,32,120]}
+                args={[0.75,0.02,20,80]}
 
             >
 
@@ -80,11 +80,11 @@ function HologramLogo() {
 
                     emissive="#00E5FF"
 
-                    emissiveIntensity={2}
+                    emissiveIntensity={1.3}
 
                     transparent
 
-                    opacity={0.45}
+                    opacity={0.22}
 
                 />
 
@@ -96,7 +96,7 @@ function HologramLogo() {
 
                 rotation={[Math.PI/2,0,0]}
 
-                args={[0.85,0.025,32,120]}
+                args={[0.56,0.018,20,80]}
 
             >
 
@@ -106,11 +106,11 @@ function HologramLogo() {
 
                     emissive="#8B5CF6"
 
-                    emissiveIntensity={2}
+                    emissiveIntensity={1.2}
 
                     transparent
 
-                    opacity={0.35}
+                    opacity={0.18}
 
                 />
 

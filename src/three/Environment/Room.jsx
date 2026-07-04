@@ -4,13 +4,13 @@ function Room() {
 
         <group>
 
-            {/* Floor */}
+            {/* ================= FLOOR ================= */}
 
             <mesh
 
-                rotation={[-Math.PI / 2,0,0]}
+                rotation={[-Math.PI / 2, 0, 0]}
 
-                position={[0,-3.25,0]}
+                position={[0, -3.3, 0]}
 
                 receiveShadow
 
@@ -18,107 +18,33 @@ function Room() {
 
                 <planeGeometry
 
-                    args={[30,30]}
+                    args={[40, 40]}
 
                 />
 
                 <meshStandardMaterial
 
-                    color="#090C14"
+                    color="#090D15"
 
                     metalness={0.9}
 
-                    roughness={0.12}
+                    roughness={0.15}
 
                 />
 
             </mesh>
 
-            {/* Back Wall */}
+            {/* ================= BACK WALL ================= */}
 
             <mesh
 
-                position={[0,3,-8]}
-
-                receiveShadow
+                position={[0, 3.4, -8]}
 
             >
 
-                <planeGeometry
+                <boxGeometry
 
-                    args={[30,15]}
-
-                />
-
-                <meshStandardMaterial
-
-                    color="#0F172A"
-
-                />
-
-            </mesh>
-
-            {/* Left Wall */}
-
-            <mesh
-
-                position={[-10,3,0]}
-
-                rotation={[0,Math.PI/2,0]}
-
-            >
-
-                <planeGeometry
-
-                    args={[30,15]}
-
-                />
-
-                <meshStandardMaterial
-
-                    color="#0B1220"
-
-                />
-
-            </mesh>
-
-            {/* Right Wall */}
-
-            <mesh
-
-                position={[10,3,0]}
-
-                rotation={[0,-Math.PI/2,0]}
-
-            >
-
-                <planeGeometry
-
-                    args={[30,15]}
-
-                />
-
-                <meshStandardMaterial
-
-                    color="#0B1220"
-
-                />
-
-            </mesh>
-
-            {/* Ceiling */}
-
-            <mesh
-
-                position={[0,9,0]}
-
-                rotation={[Math.PI/2,0,0]}
-
-            >
-
-                <planeGeometry
-
-                    args={[30,30]}
+                    args={[20, 14, 0.25]}
 
                 />
 
@@ -130,19 +56,89 @@ function Room() {
 
             </mesh>
 
-            {/* Neon Strip Left */}
+            {/* ================= LEFT WALL ================= */}
 
             <mesh
 
-                position={[-9.7,5,-2]}
+                position={[-10, 3.4, 0]}
 
-                rotation={[0,Math.PI/2,0]}
+                rotation={[0, Math.PI / 2, 0]}
 
             >
 
                 <boxGeometry
 
-                    args={[0.08,6,0.08]}
+                    args={[16, 14, 0.25]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#0F172A"
+
+                />
+
+            </mesh>
+
+            {/* ================= RIGHT WALL ================= */}
+
+            <mesh
+
+                position={[10, 3.4, 0]}
+
+                rotation={[0, Math.PI / 2, 0]}
+
+            >
+
+                <boxGeometry
+
+                    args={[16, 14, 0.25]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#0F172A"
+
+                />
+
+            </mesh>
+
+            {/* ================= CEILING ================= */}
+
+            <mesh
+
+                position={[0, 10.2, 0]}
+
+                rotation={[Math.PI / 2, 0, 0]}
+
+            >
+
+                <planeGeometry
+
+                    args={[20, 16]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#141B27"
+
+                />
+
+            </mesh>
+
+            {/* ================= LEFT RGB ================= */}
+
+            <mesh
+
+                position={[-9.8, 4.7, -2]}
+
+            >
+
+                <boxGeometry
+
+                    args={[0.05, 8, 0.05]}
 
                 />
 
@@ -152,25 +148,23 @@ function Room() {
 
                     emissive="#00E5FF"
 
-                    emissiveIntensity={2}
+                    emissiveIntensity={2.2}
 
                 />
 
             </mesh>
 
-            {/* Neon Strip Right */}
+            {/* ================= RIGHT RGB ================= */}
 
             <mesh
 
-                position={[9.7,5,-2]}
-
-                rotation={[0,Math.PI/2,0]}
+                position={[9.8, 4.7, -2]}
 
             >
 
                 <boxGeometry
 
-                    args={[0.08,6,0.08]}
+                    args={[0.05, 8, 0.05]}
 
                 />
 
@@ -180,23 +174,23 @@ function Room() {
 
                     emissive="#8B5CF6"
 
-                    emissiveIntensity={2}
+                    emissiveIntensity={2.2}
 
                 />
 
             </mesh>
 
-            {/* Top Neon */}
+            {/* ================= TOP RGB ================= */}
 
             <mesh
 
-                position={[0,8.8,-2]}
+                position={[0, 9.8, -2]}
 
             >
 
                 <boxGeometry
 
-                    args={[8,0.08,0.08]}
+                    args={[10, 0.05, 0.05]}
 
                 />
 
@@ -205,6 +199,32 @@ function Room() {
                     color="#00E5FF"
 
                     emissive="#00E5FF"
+
+                    emissiveIntensity={2}
+
+                />
+
+            </mesh>
+
+            {/* ================= BOTTOM RGB ================= */}
+
+            <mesh
+
+                position={[0, -2.9, -2]}
+
+            >
+
+                <boxGeometry
+
+                    args={[10, 0.05, 0.05]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#8B5CF6"
+
+                    emissive="#8B5CF6"
 
                     emissiveIntensity={2}
 

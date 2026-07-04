@@ -1,8 +1,24 @@
+import { useFrame } from "@react-three/fiber";
+
+import { useRef } from "react";
+
 function GridFloor() {
+
+    const group = useRef();
+
+    useFrame((state) => {
+
+        if (!group.current) return;
+
+        group.current.position.z =
+
+            Math.sin(state.clock.elapsedTime * 0.4) * 0.15;
+
+    });
 
     const lines = [];
 
-    for (let i = -10; i <= 10; i++) {
+    for (let i = -12; i <= 12; i++) {
 
         lines.push(
 
@@ -10,13 +26,13 @@ function GridFloor() {
 
                 key={`x-${i}`}
 
-                position={[i, -3.22, 0]}
+                position={[i, -3.19, 0]}
 
                 rotation={[-Math.PI / 2, 0, 0]}
 
             >
 
-                <planeGeometry args={[0.03, 20]} />
+                <planeGeometry args={[0.025, 24]} />
 
                 <meshStandardMaterial
 
@@ -24,11 +40,11 @@ function GridFloor() {
 
                     emissive="#00E5FF"
 
-                    emissiveIntensity={1.2}
+                    emissiveIntensity={1.6}
 
                     transparent
 
-                    opacity={0.45}
+                    opacity={0.32}
 
                 />
 
@@ -42,13 +58,13 @@ function GridFloor() {
 
                 key={`z-${i}`}
 
-                position={[0, -3.22, i]}
+                position={[0, -3.19, i]}
 
                 rotation={[-Math.PI / 2, 0, Math.PI / 2]}
 
             >
 
-                <planeGeometry args={[0.03, 20]} />
+                <planeGeometry args={[0.025, 24]} />
 
                 <meshStandardMaterial
 
@@ -56,11 +72,11 @@ function GridFloor() {
 
                     emissive="#8B5CF6"
 
-                    emissiveIntensity={1.2}
+                    emissiveIntensity={1.6}
 
                     transparent
 
-                    opacity={0.45}
+                    opacity={0.28}
 
                 />
 
@@ -70,7 +86,15 @@ function GridFloor() {
 
     }
 
-    return <>{lines}</>;
+    return (
+
+        <group ref={group}>
+
+            {lines}
+
+        </group>
+
+    );
 
 }
 

@@ -1,5 +1,7 @@
 import { useFrame, useThree } from "@react-three/fiber";
+
 import { useRef } from "react";
+
 import * as THREE from "three";
 
 function MouseGlow() {
@@ -16,9 +18,9 @@ function MouseGlow() {
 
             light.current.position.x,
 
-            mouse.x * 5,
+            mouse.x * 2.2,
 
-            0.08
+            0.06
 
         );
 
@@ -26,11 +28,27 @@ function MouseGlow() {
 
             light.current.position.y,
 
-            mouse.y * 3,
+            1.4 + mouse.y * 1.2,
 
-            0.08
+            0.06
 
         );
+
+        light.current.position.z = THREE.MathUtils.lerp(
+
+            light.current.position.z,
+
+            2.8,
+
+            0.06
+
+        );
+
+        light.current.intensity =
+
+            1.35 +
+
+            Math.sin(performance.now() * 0.002) * 0.15;
 
     });
 
@@ -40,13 +58,15 @@ function MouseGlow() {
 
             ref={light}
 
-            position={[0,2,3]}
+            position={[0,1.5,2.8]}
 
             color="#00E5FF"
 
-            intensity={4}
+            intensity={1.4}
 
-            distance={10}
+            distance={8}
+
+            decay={2}
 
         />
 

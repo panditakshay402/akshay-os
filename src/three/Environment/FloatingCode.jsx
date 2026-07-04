@@ -1,36 +1,67 @@
-import { Text, Float } from "@react-three/drei";
+import { Float, Text } from "@react-three/drei";
 
 const snippets = [
+
     {
+
         text: "<React />",
-        position: [-3, 2, -1],
+
+        position: [-4.4,2.2,-5.5],
+
         color: "#61DAFB",
+
     },
+
     {
+
         text: "const app = () => {}",
-        position: [3, 1, -2],
+
+        position: [4.2,1.4,-5.8],
+
         color: "#F7DF1E",
+
     },
+
     {
+
         text: "Three.js",
-        position: [-2, -2, -1],
+
+        position: [-4.1,-1.6,-5.6],
+
         color: "#FFFFFF",
+
     },
+
     {
+
         text: "Node.js",
-        position: [2.8, -1.8, -2],
+
+        position: [4.2,-1.9,-5.7],
+
         color: "#68A063",
+
     },
+
     {
+
         text: "Playwright",
-        position: [0, 3, -2],
+
+        position: [0,3.2,-6],
+
         color: "#45BA63",
+
     },
+
     {
+
         text: "MongoDB",
-        position: [-3.2, 0, -2],
+
+        position: [0,-2.8,-6],
+
         color: "#4DB33D",
+
     },
+
 ];
 
 function FloatingCode() {
@@ -45,13 +76,17 @@ function FloatingCode() {
 
                     <Float
 
-                        key={index}
+                        key={item.text}
 
-                        speed={1.5 + index * .15}
+                        speed={
 
-                        rotationIntensity={0.5}
+                            0.7 + index * 0.08
 
-                        floatIntensity={1}
+                        }
+
+                        rotationIntensity={0.08}
+
+                        floatIntensity={0.35}
 
                     >
 
@@ -59,13 +94,19 @@ function FloatingCode() {
 
                             position={item.position}
 
-                            fontSize={0.35}
+                            fontSize={0.22}
 
                             color={item.color}
 
                             anchorX="center"
 
                             anchorY="middle"
+
+                            fillOpacity={0.35}
+
+                            outlineWidth={0.003}
+
+                            outlineColor="#000000"
 
                         >
 

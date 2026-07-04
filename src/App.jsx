@@ -6,7 +6,7 @@ import Background from "./components/ui/Background";
 
 import CustomCursor from "./components/ui/CustomCursor";
 
-import SmoothScroll from "./components/ui/SmoothScroll";
+// import SmoothScroll from "./components/ui/SmoothScroll";
 
 import Loader from "./components/ui/Loader";
 
@@ -32,7 +32,7 @@ function App() {
 
             <Loader />
 
-            <SmoothScroll />
+            {/* <SmoothScroll /> */}
 
             <Background />
 
