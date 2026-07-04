@@ -1,19 +1,22 @@
 import Monitor from "./Monitor";
+
 import TerminalScreen from "./TerminalScreen";
 
 function MonitorSetup() {
 
     return (
 
-        <group position={[0,-0.15,-0.55]}>
+        <group>
 
-            {/* Left Monitor */}
+            {/* ================= LEFT MONITOR ================= */}
 
             <group
 
-                position={[-1.9,1.45,0]}
+                position={[-2.15,1.35,-0.15]}
 
-                rotation={[0,0.22,0]}
+                rotation={[0,0.28,0]}
+
+                scale={0.95}
 
             >
 
@@ -25,33 +28,43 @@ function MonitorSetup() {
 
             </group>
 
-            {/* Center Monitor */}
+            {/* ================= CENTER MONITOR ================= */}
 
             <group
 
-                position={[0,1.65,0]}
+                position={[0,1.55,-0.28]}
 
             >
 
                 <Monitor
 
-                    scale={1.25}
-
                     color="#8B5CF6"
+
+                    scale={1.18}
 
                 />
 
-                <TerminalScreen/>
+                <group
+
+                    position={[0,0,0.055]}
+
+                >
+
+                    <TerminalScreen/>
+
+                </group>
 
             </group>
 
-            {/* Right Monitor */}
+            {/* ================= RIGHT MONITOR ================= */}
 
             <group
 
-                position={[1.9,1.45,0]}
+                position={[2.15,1.35,-0.15]}
 
-                rotation={[0,-0.22,0]}
+                rotation={[0,-0.28,0]}
+
+                scale={0.95}
 
             >
 

@@ -20,11 +20,11 @@ function Chair({
 
         >
 
-            {/* Seat */}
+            {/* ================= SEAT ================= */}
 
             <mesh
 
-                position={[0,.6,0]}
+                position={[0,0.62,0]}
 
                 castShadow
 
@@ -32,103 +32,183 @@ function Chair({
 
                 <boxGeometry
 
-                    args={[1,.18,1]}
+                    args={[1.05,0.18,1.05]}
 
                 />
 
                 <meshStandardMaterial
 
-                    color="#181A20"
+                    color="#151922"
 
-                    metalness={.8}
+                    metalness={0.9}
 
-                    roughness={.2}
+                    roughness={0.15}
 
                 />
 
             </mesh>
 
-            {/* Back Rest */}
+            {/* ================= BACK REST ================= */}
 
             <mesh
 
-                position={[0,1.5,-.38]}
+                position={[0,1.65,-0.38]}
 
             >
 
                 <boxGeometry
 
-                    args={[1,.18,1.7]}
+                    args={[1.05,2.1,0.22]}
 
                 />
 
                 <meshStandardMaterial
 
-                    color="#181A20"
+                    color="#151922"
 
-                    metalness={.8}
+                    metalness={0.9}
 
-                    roughness={.2}
+                    roughness={0.18}
 
                 />
 
             </mesh>
 
-            {/* Head Rest */}
+            {/* ================= HEAD REST ================= */}
 
             <mesh
 
-                position={[0,2.35,-.35]}
+                position={[0,2.55,-0.30]}
 
             >
 
                 <boxGeometry
 
-                    args={[.72,.16,.42]}
+                    args={[0.72,0.30,0.16]}
 
                 />
 
                 <meshStandardMaterial
 
-                    color="#00E5FF"
-
-                    emissive="#00E5FF"
-
-                    emissiveIntensity={.55}
+                    color="#232A34"
 
                 />
 
             </mesh>
 
-            {/* Chair Stand */}
+            {/* ================= LEFT ARM ================= */}
 
             <mesh
 
-                position={[0,.15,0]}
+                position={[-0.60,1.10,0]}
+
+            >
+
+                <boxGeometry
+
+                    args={[0.08,0.75,0.08]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#444"
+
+                />
+
+            </mesh>
+
+            <mesh
+
+                position={[-0.60,1.45,0]}
+
+            >
+
+                <boxGeometry
+
+                    args={[0.32,0.06,0.65]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#232A34"
+
+                />
+
+            </mesh>
+
+            {/* ================= RIGHT ARM ================= */}
+
+            <mesh
+
+                position={[0.60,1.10,0]}
+
+            >
+
+                <boxGeometry
+
+                    args={[0.08,0.75,0.08]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#444"
+
+                />
+
+            </mesh>
+
+            <mesh
+
+                position={[0.60,1.45,0]}
+
+            >
+
+                <boxGeometry
+
+                    args={[0.32,0.06,0.65]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#232A34"
+
+                />
+
+            </mesh>
+
+            {/* ================= GAS LIFT ================= */}
+
+            <mesh
+
+                position={[0,0.15,0]}
 
             >
 
                 <cylinderGeometry
 
-                    args={[.05,.05,.7,20]}
+                    args={[0.05,0.05,0.70,20]}
 
                 />
 
                 <meshStandardMaterial
 
-                    color="#555"
+                    color="#777"
 
                 />
 
             </mesh>
 
-            {/* Base */}
+            {/* ================= BASE ================= */}
 
             {
 
                 [...Array(5)].map((_,i)=>{
 
-                    const angle=(i*Math.PI*2)/5;
+                    const angle = (i * Math.PI * 2) / 5;
 
                     return(
 
@@ -136,15 +216,23 @@ function Chair({
 
                             key={i}
 
-                            rotation={[0,-angle,0]}
-
                             position={[
 
-                                Math.sin(angle)*.45,
+                                Math.sin(angle)*0.45,
 
-                                -.18,
+                                -0.18,
 
-                                Math.cos(angle)*.45
+                                Math.cos(angle)*0.45
+
+                            ]}
+
+                            rotation={[
+
+                                0,
+
+                                -angle,
+
+                                0
 
                             ]}
 
@@ -154,11 +242,11 @@ function Chair({
 
                                 args={[
 
-                                    .5,
+                                    0.55,
 
-                                    .05,
+                                    0.05,
 
-                                    .08
+                                    0.08
 
                                 ]}
 
@@ -166,7 +254,7 @@ function Chair({
 
                             <meshStandardMaterial
 
-                                color="#333"
+                                color="#444"
 
                             />
 
@@ -178,25 +266,17 @@ function Chair({
 
             }
 
-            {/* RGB Strip */}
+            {/* ================= RGB STRIP ================= */}
 
             <mesh
 
-                position={[0,1.5,.48]}
+                position={[0,1.65,-0.24]}
 
             >
 
                 <boxGeometry
 
-                    args={[
-
-                        .82,
-
-                        .04,
-
-                        .04
-
-                    ]}
+                    args={[0.82,0.04,0.03]}
 
                 />
 
@@ -206,7 +286,33 @@ function Chair({
 
                     emissive="#8B5CF6"
 
-                    emissiveIntensity={1}
+                    emissiveIntensity={2}
+
+                />
+
+            </mesh>
+
+            {/* ================= LOGO ================= */}
+
+            <mesh
+
+                position={[0,2.05,-0.26]}
+
+            >
+
+                <planeGeometry
+
+                    args={[0.32,0.14]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#00E5FF"
+
+                    emissive="#00E5FF"
+
+                    emissiveIntensity={1.5}
 
                 />
 

@@ -2,9 +2,9 @@ import { Canvas } from "@react-three/fiber";
 
 import { OrbitControls } from "@react-three/drei";
 
-import Lights from "../Environment/Lights";
-
 import Glow from "../Effects/Glow";
+
+import Lights from "../Environment/Lights";
 
 import Fog from "../Environment/Fog";
 
@@ -12,9 +12,9 @@ import CameraRig from "../Environment/CameraRig";
 
 import MouseGlow from "../Environment/MouseGlow";
 
-import Workspace from "../Environment/Workspace";
-
 import Room from "../Environment/Room";
+
+import Workspace from "../Environment/Workspace";
 
 import GridFloor from "../Environment/GridFloor";
 
@@ -50,13 +50,17 @@ function Scene() {
 
                 camera={{
 
-                    position:[0,2,9],
+                    position:[0,2.8,10],
 
-                    fov:42,
+                    fov:45,
 
                 }}
 
             >
+
+                {/* ===================== */}
+                {/* ENVIRONMENT */}
+                {/* ===================== */}
 
                 <Fog/>
 
@@ -67,6 +71,10 @@ function Scene() {
                 <CyberStars/>
 
                 <MouseGlow/>
+
+                {/* ===================== */}
+                {/* WORLD */}
+                {/* ===================== */}
 
                 <CameraRig>
 
@@ -92,19 +100,27 @@ function Scene() {
 
                 </CameraRig>
 
+                {/* ===================== */}
+                {/* CONTROLS */}
+                {/* ===================== */}
+
                 <OrbitControls
 
                     enableZoom={false}
 
                     enablePan={false}
 
+                    enableRotate={true}
+
                     autoRotate
 
-                    autoRotateSpeed={0.15}
+                    autoRotateSpeed={0.18}
 
-                    minPolarAngle={Math.PI/2.7}
+                    target={[0,1.2,0]}
 
-                    maxPolarAngle={Math.PI/2}
+                    minPolarAngle={Math.PI/2.9}
+
+                    maxPolarAngle={Math.PI/2.05}
 
                 />
 

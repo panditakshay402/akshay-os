@@ -4,9 +4,9 @@ function Mouse({
 
     rotation = [0,0,0],
 
-}){
+}) {
 
-    return(
+    return (
 
         <group
 
@@ -16,7 +16,7 @@ function Mouse({
 
         >
 
-            {/* Mouse Body */}
+            {/* ================= BODY ================= */}
 
             <mesh
 
@@ -24,17 +24,19 @@ function Mouse({
 
                 receiveShadow
 
+                scale={[1,0.65,1.35]}
+
             >
 
-                <capsuleGeometry
+                <sphereGeometry
 
-                    args={[0.18,0.35,8,16]}
+                    args={[0.22,32,32]}
 
                 />
 
                 <meshStandardMaterial
 
-                    color="#181818"
+                    color="#141821"
 
                     metalness={0.9}
 
@@ -44,17 +46,17 @@ function Mouse({
 
             </mesh>
 
-            {/* RGB Strip */}
+            {/* ================= RGB STRIP ================= */}
 
             <mesh
 
-                position={[0,0.05,0.01]}
+                position={[0,0.06,0.02]}
 
             >
 
                 <boxGeometry
 
-                    args={[0.05,0.25,0.02]}
+                    args={[0.05,0.28,0.02]}
 
                 />
 
@@ -64,23 +66,25 @@ function Mouse({
 
                     emissive="#00E5FF"
 
-                    emissiveIntensity={1.8}
+                    emissiveIntensity={2}
 
                 />
 
             </mesh>
 
-            {/* Scroll Wheel */}
+            {/* ================= SCROLL WHEEL ================= */}
 
             <mesh
 
-                position={[0,0.08,0.1]}
+                position={[0,0.08,0.11]}
+
+                rotation={[Math.PI/2,0,0]}
 
             >
 
                 <cylinderGeometry
 
-                    args={[0.025,0.025,0.05,16]}
+                    args={[0.025,0.025,0.05,24]}
 
                 />
 
@@ -90,55 +94,69 @@ function Mouse({
 
                     emissive="#8B5CF6"
 
-                    emissiveIntensity={0.8}
+                    emissiveIntensity={1}
 
                 />
 
             </mesh>
 
-            {/* Left Click */}
+            {/* ================= LEFT BUTTON ================= */}
 
             <mesh
 
-                position={[-0.055,0.02,0.15]}
+                position={[-0.06,0.02,0.14]}
 
             >
 
                 <boxGeometry
 
-                    args={[0.08,0.02,0.12]}
+                    args={[0.09,0.02,0.13]}
 
                 />
 
                 <meshStandardMaterial
 
-                    color="#232323"
+                    color="#232A34"
 
                 />
 
             </mesh>
 
-            {/* Right Click */}
+            {/* ================= RIGHT BUTTON ================= */}
 
             <mesh
 
-                position={[0.055,0.02,0.15]}
+                position={[0.06,0.02,0.14]}
 
             >
 
                 <boxGeometry
 
-                    args={[0.08,0.02,0.12]}
+                    args={[0.09,0.02,0.13]}
 
                 />
 
                 <meshStandardMaterial
 
-                    color="#232323"
+                    color="#232A34"
 
                 />
 
             </mesh>
+
+            {/* ================= BOTTOM GLOW ================= */}
+
+            <pointLight
+
+                position={[0,-0.08,0]}
+
+                intensity={1.6}
+
+                distance={1.2}
+
+                color="#00E5FF"
+
+            />
 
         </group>
 

@@ -22,29 +22,67 @@ function Monitor({
 
         >
 
-            {/* Screen */}
+            {/* ================= FRAME ================= */}
 
             <mesh castShadow>
 
-                <boxGeometry args={[1.8,1.1,.08]} />
+                <boxGeometry
+
+                    args={[2.2,1.35,0.08]}
+
+                />
 
                 <meshStandardMaterial
 
-                    color="#111827"
+                    color="#0F1117"
 
-                    metalness={.8}
+                    metalness={1}
 
-                    roughness={.15}
+                    roughness={0.18}
 
                 />
 
             </mesh>
 
-            {/* Display */}
+            {/* ================= SCREEN ================= */}
 
-            <mesh position={[0,0,.045]}>
+            <mesh
 
-                <planeGeometry args={[1.55,.85]} />
+                position={[0,0,0.043]}
+
+            >
+
+                <planeGeometry
+
+                    args={[1.95,1.12]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#081018"
+
+                    emissive={color}
+
+                    emissiveIntensity={0.45}
+
+                />
+
+            </mesh>
+
+            {/* ================= RGB BORDER ================= */}
+
+            <mesh
+
+                position={[0,0,0.046]}
+
+            >
+
+                <planeGeometry
+
+                    args={[2.02,1.18]}
+
+                />
 
                 <meshStandardMaterial
 
@@ -52,21 +90,33 @@ function Monitor({
 
                     emissive={color}
 
-                    emissiveIntensity={1.2}
+                    emissiveIntensity={2}
+
+                    transparent
+
+                    opacity={0.10}
 
                 />
 
             </mesh>
 
-            {/* Stand */}
+            {/* ================= STAND ================= */}
 
-            <mesh position={[0,-.8,0]}>
+            <mesh
 
-                <boxGeometry args={[.08,.7,.08]} />
+                position={[0,-0.92,0]}
+
+            >
+
+                <boxGeometry
+
+                    args={[0.08,0.65,0.08]}
+
+                />
 
                 <meshStandardMaterial
 
-                    color="#555"
+                    color="#444"
 
                     metalness={1}
 
@@ -74,15 +124,77 @@ function Monitor({
 
             </mesh>
 
-            {/* Base */}
+            {/* ================= BASE ================= */}
 
-            <mesh position={[0,-1.15,0]}>
+            <mesh
 
-                <boxGeometry args={[.55,.05,.45]} />
+                position={[0,-1.28,0]}
+
+            >
+
+                <boxGeometry
+
+                    args={[0.65,0.05,0.45]}
+
+                />
 
                 <meshStandardMaterial
 
-                    color="#444"
+                    color="#333"
+
+                    metalness={1}
+
+                />
+
+            </mesh>
+
+            {/* ================= CAMERA ================= */}
+
+            <mesh
+
+                position={[0,0.70,0.05]}
+
+            >
+
+                <sphereGeometry
+
+                    args={[0.03,16,16]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#111"
+
+                    emissive="#00E5FF"
+
+                    emissiveIntensity={1.5}
+
+                />
+
+            </mesh>
+
+            {/* ================= POWER LED ================= */}
+
+            <mesh
+
+                position={[0.98,-0.63,0.05]}
+
+            >
+
+                <sphereGeometry
+
+                    args={[0.018,16,16]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#00E5FF"
+
+                    emissive="#00E5FF"
+
+                    emissiveIntensity={3}
 
                 />
 
