@@ -1,83 +1,158 @@
 import "./Hero.css";
 
+import { motion } from "framer-motion";
+
 function Hero() {
-  return (
-    <section className="hero" id="home">
 
-      <div className="hero-left">
+    return (
 
-        <p className="hero-subtitle">
-          SOFTWARE ENGINEER • IBM
-        </p>
+        <section
+            className="hero"
+            id="home"
+        >
 
-        <h1 className="hero-title">
-          Hi,
-          <br />
-          I'm <span>Akshay Pandit</span>
-        </h1>
+            <motion.div
 
-        <p className="hero-description">
-          Passionate Software Engineer focused on building
-          premium web experiences with React, Three.js,
-          JavaScript and modern frontend technologies.
-        </p>
+                className="hero-left"
 
-        <div className="hero-buttons">
+                initial={{
+                    opacity:0,
+                    x:-80
+                }}
 
-          <button className="primary-btn">
-            Explore Portfolio
-          </button>
+                animate={{
+                    opacity:1,
+                    x:0
+                }}
 
-          <button className="secondary-btn">
-            Contact Me
-          </button>
+                transition={{
+                    duration:1
+                }}
 
-        </div>
+            >
 
-        <div className="hero-social">
+                <p className="hero-subtitle">
 
-          <a href="#">
-            GitHub
-          </a>
+                    SOFTWARE ENGINEER • IBM
 
-          <a href="#">
-            LinkedIn
-          </a>
+                </p>
 
-          <a href="#">
-            Resume
-          </a>
+                <h1 className="hero-title">
 
-        </div>
+                    Hi,
 
-      </div>
+                    <br />
 
-      <div className="hero-right">
+                    I'm
 
-        <div className="glass-card">
+                    <span>
 
-          <div className="circle one"></div>
+                        {" "}Akshay Pandit
 
-          <div className="circle two"></div>
+                    </span>
 
-          <div className="circle three"></div>
+                </h1>
 
-          <div className="card-content">
+                <p className="hero-description">
 
-            <h2>Akshay.OS</h2>
+                    Building futuristic digital experiences using
+                    React, JavaScript, Three.js, GSAP and modern
+                    frontend engineering.
 
-            <p>
-              Initializing futuristic workspace...
-            </p>
+                </p>
 
-          </div>
+                <div className="hero-buttons">
 
-        </div>
+                    <button className="primary-btn">
 
-      </div>
+                        Explore Portfolio
 
-    </section>
-  );
+                    </button>
+
+                    <button className="secondary-btn">
+
+                        Contact Me
+
+                    </button>
+
+                </div>
+
+                <div className="hero-social">
+
+                    <a href="#">
+
+                        GitHub
+
+                    </a>
+
+                    <a href="#">
+
+                        LinkedIn
+
+                    </a>
+
+                    <a href="#">
+
+                        Resume
+
+                    </a>
+
+                </div>
+
+            </motion.div>
+
+            <motion.div
+
+                className="hero-right"
+
+                initial={{
+                    opacity:0,
+                    scale:.8
+                }}
+
+                animate={{
+                    opacity:1,
+                    scale:1
+                }}
+
+                transition={{
+                    duration:1.2
+                }}
+
+            >
+
+                <div className="glass-card">
+
+                    <div className="circle one"></div>
+
+                    <div className="circle two"></div>
+
+                    <div className="circle three"></div>
+
+                    <div className="card-content">
+
+                        <h2>
+
+                            AKSHAY.OS
+
+                        </h2>
+
+                        <p>
+
+                            Initializing Future...
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </motion.div>
+
+        </section>
+
+    );
+
 }
 
 export default Hero;

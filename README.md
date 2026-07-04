@@ -35,3 +35,5 @@ lenis → Smooth scrolling
 npm install -D prettier
 
 npm install @studio-freight/lenis
+
+npm install gsap framer-motion

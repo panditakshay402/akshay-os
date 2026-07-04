@@ -1,7 +1,5 @@
 .hero{
 
-    width:100%;
-
     min-height:100vh;
 
     display:grid;
@@ -12,9 +10,11 @@
 
     gap:80px;
 
-    padding-top:110px;
+    padding-top:100px;
 
     position:relative;
+
+    overflow:hidden;
 
 }
 
@@ -24,19 +24,21 @@
 
     position:absolute;
 
-    width:420px;
+    width:550px;
 
-    height:420px;
+    height:550px;
 
     background:#00E5FF22;
 
-    filter:blur(140px);
+    filter:blur(170px);
 
-    top:-150px;
+    left:-180px;
 
-    left:-120px;
+    top:-180px;
 
     border-radius:50%;
+
+    animation:floatLeft 12s ease-in-out infinite;
 
 }
 
@@ -46,19 +48,21 @@
 
     position:absolute;
 
-    width:450px;
+    width:650px;
 
-    height:450px;
+    height:650px;
 
     background:#8B5CF622;
 
-    filter:blur(140px);
+    filter:blur(170px);
 
-    right:-120px;
+    right:-220px;
 
-    bottom:-120px;
+    bottom:-220px;
 
     border-radius:50%;
+
+    animation:floatRight 14s ease-in-out infinite;
 
 }
 
@@ -66,7 +70,7 @@
 
     position:relative;
 
-    z-index:2;
+    z-index:10;
 
 }
 
@@ -74,9 +78,9 @@
 
     color:#00E5FF;
 
-    letter-spacing:5px;
-
     font-size:15px;
+
+    letter-spacing:6px;
 
     margin-bottom:25px;
 
@@ -86,9 +90,9 @@
 
 .hero-title{
 
-    font-size:86px;
+    font-size:92px;
 
-    line-height:1.05;
+    line-height:1.02;
 
     color:white;
 
@@ -108,9 +112,9 @@
 
     max-width:620px;
 
-    font-size:20px;
-
     line-height:1.9;
+
+    font-size:20px;
 
 }
 
@@ -118,9 +122,9 @@
 
     display:flex;
 
-    gap:20px;
+    gap:22px;
 
-    margin-top:45px;
+    margin-top:50px;
 
 }
 
@@ -130,9 +134,13 @@
 
     height:60px;
 
+    border:none;
+
     border-radius:16px;
 
-    border:none;
+    color:white;
+
+    font-size:17px;
 
     background:linear-gradient(
         135deg,
@@ -140,18 +148,7 @@
         #8B5CF6
     );
 
-    color:white;
-
-    font-size:18px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
     transition:.35s;
-
-    box-shadow:
-        0 10px 35px rgba(0,229,255,.25);
 
 }
 
@@ -160,6 +157,7 @@
     transform:translateY(-6px);
 
     box-shadow:
+
         0 18px 45px rgba(0,229,255,.35);
 
 }
@@ -170,17 +168,13 @@
 
     height:60px;
 
-    border-radius:16px;
-
     background:transparent;
+
+    border-radius:16px;
 
     color:white;
 
     border:1px solid rgba(255,255,255,.12);
-
-    cursor:pointer;
-
-    font-size:18px;
 
     transition:.35s;
 
@@ -200,7 +194,7 @@
 
     gap:35px;
 
-    margin-top:50px;
+    margin-top:45px;
 
 }
 
@@ -208,11 +202,7 @@
 
     color:#94A3B8;
 
-    text-decoration:none;
-
-    font-size:16px;
-
-    transition:.3s;
+    transition:.35s;
 
 }
 
@@ -232,6 +222,8 @@
 
     position:relative;
 
+    z-index:10;
+
 }
 
 .glass-card{
@@ -240,21 +232,37 @@
 
     height:580px;
 
-    border-radius:32px;
-
     position:relative;
 
     overflow:hidden;
 
-    background:
-        rgba(255,255,255,.04);
+    border-radius:36px;
 
-    backdrop-filter:blur(25px);
+    background:
+
+        rgba(255,255,255,.05);
+
+    backdrop-filter:blur(22px);
 
     border:1px solid rgba(255,255,255,.08);
 
     box-shadow:
-        0 25px 60px rgba(0,0,0,.45);
+
+        0 25px 80px rgba(0,0,0,.45);
+
+    transition:.45s;
+
+}
+
+.glass-card:hover{
+
+    transform:
+
+        rotateY(-8deg)
+
+        rotateX(6deg)
+
+        translateY(-12px);
 
 }
 
@@ -272,21 +280,19 @@
 
     align-items:center;
 
-    text-align:center;
-
-    z-index:3;
+    z-index:20;
 
 }
 
 .card-content h2{
 
-    font-size:56px;
-
     color:white;
 
-    margin-bottom:18px;
+    font-size:54px;
 
-    letter-spacing:2px;
+    letter-spacing:3px;
+
+    margin-bottom:18px;
 
 }
 
@@ -304,23 +310,25 @@
 
     border-radius:50%;
 
-    filter:blur(8px);
+    filter:blur(10px);
 
 }
 
 .one{
 
-    width:170px;
+    width:180px;
 
-    height:170px;
+    height:180px;
 
     background:#00E5FF;
 
-    top:-40px;
+    top:-60px;
 
-    left:-40px;
+    left:-60px;
 
-    opacity:.25;
+    opacity:.22;
+
+    animation:orbOne 8s ease-in-out infinite;
 
 }
 
@@ -332,11 +340,13 @@
 
     background:#8B5CF6;
 
-    right:-70px;
+    right:-80px;
 
-    bottom:-70px;
+    bottom:-80px;
 
-    opacity:.25;
+    opacity:.22;
+
+    animation:orbTwo 10s ease-in-out infinite;
 
 }
 
@@ -346,11 +356,11 @@
 
     height:90px;
 
-    background:#FFFFFF;
-
-    top:50%;
+    background:white;
 
     left:50%;
+
+    top:50%;
 
     transform:translate(-50%,-50%);
 
@@ -358,15 +368,103 @@
 
 }
 
-@media (max-width:1100px){
+@keyframes floatLeft{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(120px,80px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+@keyframes floatRight{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(-120px,-80px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+@keyframes orbOne{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(50px,40px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+@keyframes orbTwo{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(-40px,-50px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+@media(max-width:1200px){
 
     .hero{
 
         grid-template-columns:1fr;
 
-        text-align:center;
+        gap:80px;
 
-        gap:70px;
+        text-align:center;
 
     }
 
@@ -392,9 +490,7 @@
 
     .glass-card{
 
-        width:100%;
-
-        max-width:520px;
+        width:520px;
 
         height:520px;
 
@@ -402,7 +498,7 @@
 
 }
 
-@media (max-width:768px){
+@media(max-width:768px){
 
     .hero{
 
@@ -412,7 +508,7 @@
 
     .hero-title{
 
-        font-size:58px;
+        font-size:62px;
 
     }
 
@@ -422,22 +518,33 @@
 
     }
 
+    .glass-card{
+
+        width:100%;
+
+        max-width:420px;
+
+        height:420px;
+
+    }
+
+    .card-content h2{
+
+        font-size:42px;
+
+    }
+
     .primary-btn,
+
     .secondary-btn{
 
         width:100%;
 
     }
 
-    .glass-card{
-
-        height:420px;
-
-    }
-
 }
 
-@media (max-width:480px){
+@media(max-width:480px){
 
     .hero-title{
 
@@ -447,15 +554,27 @@
 
     .hero-subtitle{
 
-        font-size:13px;
-
         letter-spacing:3px;
+
+        font-size:13px;
 
     }
 
     .glass-card{
 
-        height:340px;
+        height:330px;
+
+    }
+
+    .card-content h2{
+
+        font-size:34px;
+
+    }
+
+    .card-content p{
+
+        font-size:15px;
 
     }
 
