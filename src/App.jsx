@@ -2,6 +2,8 @@ import Container from "./components/common/Container";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./sections/Hero/Hero";
 
+import About from "./sections/About/About";
+
 function App() {
   return (
     <>
@@ -9,6 +11,7 @@ function App() {
 
       <Container>
         <Hero />
+        <About />
       </Container>
     </>
   );

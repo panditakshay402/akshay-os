@@ -1,0 +1,51 @@
+.about{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:90px;
+
+    padding:120px 0;
+
+    align-items:center;
+
+}
+
+.section-title{
+
+    color:var(--accent);
+
+    letter-spacing:5px;
+
+    margin-bottom:20px;
+
+}
+
+.about h2{
+
+    font-size:52px;
+
+    line-height:1.2;
+
+}
+
+.about-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.about-right p{
+
+    color:#B8BDD0;
+
+    line-height:1.9;
+
+    font-size:18px;
+
+}

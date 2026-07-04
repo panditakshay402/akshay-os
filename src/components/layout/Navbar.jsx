@@ -1,5 +1,28 @@
 import styles from "./Navbar.module.css";
 
+const navItems = [
+  {
+    title: "About",
+    href: "#about",
+  },
+  {
+    title: "Skills",
+    href: "#skills",
+  },
+  {
+    title: "Projects",
+    href: "#projects",
+  },
+  {
+    title: "Experience",
+    href: "#experience",
+  },
+  {
+    title: "Contact",
+    href: "#contact",
+  },
+];
+
 function Navbar() {
   return (
     <header className={styles.navbar}>
@@ -9,12 +32,13 @@ function Navbar() {
 
       <nav>
         <ul className={styles.menu}>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Experience</a></li>
-          <li><a href="#">Contact</a></li>
+          {navItems.map((item) => (
+            <li key={item.title}>
+              <a href={item.href}>
+                {item.title}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
 
