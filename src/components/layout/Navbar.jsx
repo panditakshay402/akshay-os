@@ -27,7 +27,7 @@ function Navbar() {
   return (
     <header className={styles.navbar}>
       <div className={styles.logo}>
-        <span>Akshay</span>.OS
+        <span>Akshay </span>Pandit
       </div>
 
       <nav>
