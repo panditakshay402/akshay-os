@@ -53,11 +53,11 @@ function Footer() {
 
                 <div className="footer-social">
 
-                    <a href="#">
+                    <a href="https://github.com/panditakshay402" target="_blank" rel="noopener noreferrer">
                         GitHub
                     </a>
 
-                    <a href="#">
+                    <a href="https://www.linkedin.com/in/akshay-pandit-Mumbai/" target="_blank" rel="noopener noreferrer">
                         LinkedIn
                     </a>
 
@@ -65,7 +65,7 @@ function Footer() {
                         LeetCode
                     </a>
 
-                    <a href="#">
+                    <a href="https://drive.google.com/file/d/1g0k5r6J4X8x7Z9y5F3K2L8J9H2P3Q4R5/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                         Resume
                     </a>
 
