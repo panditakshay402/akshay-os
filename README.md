@@ -39,3 +39,5 @@ npm install @studio-freight/lenis
 npm install gsap framer-motion
 
 npm install three @react-three/fiber @react-three/drei
+
+npm install @react-three/postprocessing postprocessing

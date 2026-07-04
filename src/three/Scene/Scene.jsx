@@ -2,9 +2,19 @@ import { Canvas } from "@react-three/fiber";
 
 import { OrbitControls } from "@react-three/drei";
 
-import Cube from "../Character/Cube";
-
 import Lights from "../Environment/Lights";
+
+import FloatingParticles from "../Environment/FloatingParticles";
+
+import FloatingCode from "../Environment/FloatingCode";
+
+import CyberDesk from "../Environment/CyberDesk";
+
+import HologramPanels from "../Environment/HologramPanels";
+
+import AnimeDeveloper from "../Character/AnimeDeveloper";
+
+import Glow from "../Effects/Glow";
 
 import "./Scene.css";
 
@@ -22,17 +32,27 @@ function Scene() {
 
                 camera={{
 
-                    position:[0,0,6],
+                    position:[0,1.7,8],
 
-                    fov:50,
+                    fov:42,
 
                 }}
 
             >
 
+                <Glow/>
+
                 <Lights/>
 
-                <Cube/>
+                <FloatingParticles/>
+
+                <FloatingCode/>
+
+                <CyberDesk/>
+
+                <HologramPanels/>
+
+                <AnimeDeveloper/>
 
                 <OrbitControls
 
@@ -44,7 +64,11 @@ function Scene() {
 
                     autoRotate
 
-                    autoRotateSpeed={2}
+                    autoRotateSpeed={0.45}
+
+                    minPolarAngle={Math.PI/2.7}
+
+                    maxPolarAngle={Math.PI/2}
 
                 />
 
