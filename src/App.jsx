@@ -2,6 +2,8 @@ import Container from "./components/common/Container";
 
 import Navbar from "./components/layout/Navbar";
 
+import Background from "./components/ui/Background";
+
 import Hero from "./sections/Hero/Hero";
 
 import About from "./sections/About/About";
@@ -14,9 +16,16 @@ import Experience from "./sections/Experience/Experience";
 
 import Contact from "./sections/Contact/Contact";
 
+import Footer from "./sections/Footer/Footer";
+
 function App() {
+
   return (
+
     <>
+
+      <Background />
+
       <Navbar />
 
       <Container>
@@ -33,10 +42,14 @@ function App() {
 
         <Contact />
 
+        <Footer />
+
       </Container>
 
     </>
+
   );
+
 }
 
 export default App;
