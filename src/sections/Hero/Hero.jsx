@@ -2,6 +2,8 @@ import "./Hero.css";
 
 import { motion } from "framer-motion";
 
+import Scene from "../../three/Scene/Scene";
+
 function Hero() {
 
     return (
@@ -41,7 +43,7 @@ function Hero() {
 
                     Hi,
 
-                    <br />
+                    <br/>
 
                     I'm
 
@@ -56,8 +58,8 @@ function Hero() {
                 <p className="hero-description">
 
                     Building futuristic digital experiences using
-                    React, JavaScript, Three.js, GSAP and modern
-                    frontend engineering.
+                    React, Three.js, GSAP and modern frontend
+                    engineering.
 
                 </p>
 
@@ -80,21 +82,15 @@ function Hero() {
                 <div className="hero-social">
 
                     <a href="#">
-
                         GitHub
-
                     </a>
 
                     <a href="#">
-
                         LinkedIn
-
                     </a>
 
                     <a href="#">
-
                         Resume
-
                     </a>
 
                 </div>
@@ -123,27 +119,7 @@ function Hero() {
 
                 <div className="glass-card">
 
-                    <div className="circle one"></div>
-
-                    <div className="circle two"></div>
-
-                    <div className="circle three"></div>
-
-                    <div className="card-content">
-
-                        <h2>
-
-                            AKSHAY.OS
-
-                        </h2>
-
-                        <p>
-
-                            Initializing Future...
-
-                        </p>
-
-                    </div>
+                    <Scene/>
 
                 </div>
 
