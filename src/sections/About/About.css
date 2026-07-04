@@ -1,32 +1,110 @@
 .about{
 
+    min-height:100vh;
+
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.2fr .8fr;
 
-    gap:90px;
+    gap:70px;
+
+    align-items:center;
 
     padding:120px 0;
 
-    align-items:center;
+}
+
+.section-tag{
+
+    color:#00E5FF;
+
+    letter-spacing:4px;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
+    font-weight:600;
 
 }
 
 .section-title{
 
-    color:var(--accent);
+    font-size:54px;
 
-    letter-spacing:5px;
+    line-height:1.2;
 
-    margin-bottom:20px;
+    color:white;
+
+    margin-bottom:30px;
 
 }
 
-.about h2{
+.about-text{
 
-    font-size:52px;
+    color:#9CA3AF;
 
-    line-height:1.2;
+    font-size:18px;
+
+    line-height:1.9;
+
+    margin-bottom:22px;
+
+    max-width:700px;
+
+}
+
+.about-stats{
+
+    display:flex;
+
+    gap:25px;
+
+    margin-top:45px;
+
+    flex-wrap:wrap;
+
+}
+
+.stat-card{
+
+    width:170px;
+
+    padding:28px;
+
+    border-radius:18px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#00E5FF;
+
+}
+
+.stat-card h3{
+
+    font-size:42px;
+
+    color:#8B5CF6;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+    color:#CBD5E1;
+
+    font-size:15px;
 
 }
 
@@ -34,18 +112,96 @@
 
     display:flex;
 
-    flex-direction:column;
-
-    gap:25px;
+    justify-content:center;
 
 }
 
-.about-right p{
+.about-card{
 
-    color:#B8BDD0;
+    width:100%;
 
-    line-height:1.9;
+    max-width:430px;
+
+    padding:45px;
+
+    border-radius:28px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.about-card h3{
+
+    color:white;
+
+    margin-bottom:30px;
+
+    font-size:30px;
+
+}
+
+.about-card ul{
+
+    list-style:none;
+
+}
+
+.about-card li{
+
+    color:#CBD5E1;
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
 
     font-size:18px;
+
+}
+
+.about-card li:last-child{
+
+    border:none;
+
+}
+
+@media(max-width:992px){
+
+    .about{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-right{
+
+        justify-content:flex-start;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .section-title{
+
+        font-size:40px;
+
+    }
+
+    .about-text{
+
+        font-size:16px;
+
+    }
+
+    .stat-card{
+
+        width:100%;
+
+    }
 
 }
