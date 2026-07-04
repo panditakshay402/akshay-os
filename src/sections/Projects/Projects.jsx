@@ -2,11 +2,11 @@ import "./Projects.css";
 
 const projects = [
   {
-    title: "Akshay.OS Portfolio",
+    title: "Akshay Portfolio",
     description:
       "A futuristic portfolio built with React, Three.js, GSAP and modern animations.",
-    tech: ["React", "Three.js", "GSAP"],
-    github: "#",
+    tech: ["React", "Three.js", "GSAP", "Vite", "CSS", "JavaScript", "HTML"],
+    github: "https://github.com/panditakshay402/akshay-os",
     live: "#",
   },
   {
@@ -14,15 +14,15 @@ const projects = [
     description:
       "Enterprise automation framework using Playwright with Page Object Model.",
     tech: ["Playwright", "JavaScript", "Node.js"],
-    github: "#",
+    github: "https://github.com/panditakshay402/Js_PlayWright",
     live: "#",
   },
   {
-    title: "Employee Management",
+    title: "EtherHealth",
     description:
-      "Full Stack Employee Management System with CRUD operations and authentication.",
-    tech: ["React", "Node.js", "MongoDB"],
-    github: "#",
+      "Full Stack Healthcare Management System with operations and authentication.",
+    tech: ["React", "Node.js", "MongoDB", "blockchain integration"],
+    github: "https://github.com/panditakshay402/EtherHealth",
     live: "#",
   },
 ];

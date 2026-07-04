@@ -29,7 +29,7 @@ function Contact() {
             <h3>Email</h3>
 
             <p>
-              yourmail@example.com
+              PanditAkshay402@gmail.com
             </p>
 
           </div>
@@ -39,7 +39,7 @@ function Contact() {
             <h3>Location</h3>
 
             <p>
-              Bangalore, India
+              Mumbai, Maharashtra, India
             </p>
 
           </div>
