@@ -4,7 +4,7 @@ import { useMemo } from "react";
 
 function FloatingParticles() {
 
-    const particles = useMemo(() => {
+    const particles = useMemo(function createParticles() {
 
         const positions = [];
 
