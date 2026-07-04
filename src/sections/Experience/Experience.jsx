@@ -6,21 +6,15 @@ const experiences = [
     role: "Application Developer",
     duration: "May 2026 - Present",
     description:
-      "Working on enterprise applications, automation, frontend development and modern web technologies."
+      "Working on enterprise applications, automation, full-stack development and modern web technologies."
   },
+
   {
-    company: "Edugenius Software LLP",
-    role: "Robotics & Programming Trainer",
-    duration: "Apr 2026 - Jul 2026",
+    company: "Equitec",
+    role: "Software Developer",
+    duration: "Sep 2024",
     description:
-      "Taught Robotics, Programming, Arduino and STEM concepts to school students."
-  },
-  {
-    company: "Equitec Pvt Ltd",
-    role: "Software Developer Intern",
-    duration: "2024",
-    description:
-      "Worked on .NET, JavaScript, Bootstrap and SQL Server based web applications."
+      "Worked on JavaScript, React-Native, Bootstrap, .Net and SQL Server based web applications."
   }
 ];
 

@@ -1,6 +1,8 @@
 import { Text } from "@react-three/drei";
+
 import { useFrame } from "@react-three/fiber";
-import { useRef, useState } from "react";
+
+import { useRef } from "react";
 
 const lines = [
 
@@ -24,7 +26,7 @@ function TerminalScreen() {
 
     const screen = useRef();
 
-    const [index,setIndex] = useState(0);
+    const textGroup = useRef();
 
     useFrame((state)=>{
 
@@ -32,27 +34,25 @@ function TerminalScreen() {
 
             screen.current.material.opacity =
 
-                0.82 +
+                0.86 +
 
-                Math.sin(state.clock.elapsedTime * 6) * 0.12;
+                Math.sin(
+
+                    state.clock.elapsedTime * 5
+
+                ) * 0.08;
 
         }
 
-        const value = Math.floor(
+        if(textGroup.current){
 
-            state.clock.elapsedTime * 1.25
+            textGroup.current.position.y =
 
-        );
+                Math.sin(
 
-        if(
+                    state.clock.elapsedTime
 
-            value !== index &&
-
-            value < lines.length
-
-        ){
-
-            setIndex(value);
+                ) * 0.01;
 
         }
 
@@ -60,19 +60,27 @@ function TerminalScreen() {
 
     return(
 
-        <group position={[0,0.25,0.06]}>
+        <group>
 
-            <mesh ref={screen}>
+            {/* Screen */}
+
+            <mesh
+
+                ref={screen}
+
+                position={[0,0,0.03]}
+
+            >
 
                 <planeGeometry
 
-                    args={[2.05,1.18]}
+                    args={[1.95,1.08]}
 
                 />
 
                 <meshStandardMaterial
 
-                    color="#081018"
+                    color="#071018"
 
                     transparent
 
@@ -82,51 +90,59 @@ function TerminalScreen() {
 
             </mesh>
 
-            {
+            {/* Code */}
 
-                lines
+            <group
 
-                .slice(0,index+1)
+                ref={textGroup}
 
-                .map((line,i)=>(
+            >
 
-                    <Text
+                {
 
-                        key={i}
+                    lines.map((line,index)=>(
 
-                        position={[
+                        <Text
 
-                            -0.9,
+                            key={index}
 
-                            0.42-(i*0.16),
+                            position={[
 
-                            0.01
+                                -0.84,
 
-                        ]}
+                                0.38 -
 
-                        anchorX="left"
+                                index * 0.14,
 
-                        fontSize={0.08}
+                                0.05
 
-                        color={
+                            ]}
 
-                            i===lines.length-1
+                            anchorX="left"
 
-                            ? "#00E5FF"
+                            fontSize={0.075}
 
-                            : "#7CFFB2"
+                            color={
 
-                        }
+                                index===0
 
-                    >
+                                ? "#00E5FF"
 
-                        {line}
+                                : "#7CFFB2"
 
-                    </Text>
+                            }
 
-                ))
+                        >
 
-            }
+                            {line}
+
+                        </Text>
+
+                    ))
+
+                }
+
+            </group>
 
         </group>
 

@@ -1,28 +1,24 @@
-import { Points, PointMaterial } from "@react-three/drei";
-
 import { useMemo } from "react";
+
+import { Points, PointMaterial } from "@react-three/drei";
 
 function FloatingParticles() {
 
-    const particles = useMemo(function createParticles() {
+    const positions = useMemo(() => {
 
-        const positions = [];
+        const array = new Float32Array(3000 * 3);
 
-        for (let i = 0; i < 3000; i++) {
+        for (let i = 0; i < array.length; i += 3) {
 
-            positions.push(
+            array[i] = (Math.random() - 0.5) * 18;
 
-                (Math.random() - 0.5) * 18,
+            array[i + 1] = (Math.random() - 0.5) * 12;
 
-                (Math.random() - 0.5) * 18,
-
-                (Math.random() - 0.5) * 18
-
-            );
+            array[i + 2] = (Math.random() - 0.5) * 18;
 
         }
 
-        return new Float32Array(positions);
+        return array;
 
     }, []);
 
@@ -30,7 +26,7 @@ function FloatingParticles() {
 
         <Points
 
-            positions={particles}
+            positions={positions}
 
             stride={3}
 
@@ -44,11 +40,13 @@ function FloatingParticles() {
 
                 color="#00E5FF"
 
-                size={0.035}
+                size={0.04}
 
                 sizeAttenuation
 
                 depthWrite={false}
+
+                opacity={0.9}
 
             />
 

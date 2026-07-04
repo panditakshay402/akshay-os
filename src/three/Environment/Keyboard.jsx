@@ -6,9 +6,19 @@ function Keyboard({
 
 }){
 
-    const rows = 5;
+    const rows = [
 
-    const cols = 14;
+        14,
+
+        14,
+
+        13,
+
+        12,
+
+        8,
+
+    ];
 
     return(
 
@@ -20,29 +30,63 @@ function Keyboard({
 
         >
 
-            {/* Keyboard Base */}
+            {/* ================= BASE ================= */}
 
-            <mesh receiveShadow>
+            <mesh
 
-                <boxGeometry args={[2.4,.08,.8]} />
+                receiveShadow
+
+            >
+
+                <boxGeometry
+
+                    args={[2.55,0.09,0.92]}
+
+                />
 
                 <meshStandardMaterial
 
-                    color="#161B22"
+                    color="#151922"
 
-                    metalness={.85}
+                    metalness={0.9}
 
-                    roughness={.18}
+                    roughness={0.15}
 
                 />
 
             </mesh>
 
-            {/* Keys */}
+            {/* ================= RGB UNDERGLOW ================= */}
+
+            <mesh
+
+                position={[0,-0.03,0]}
+
+            >
+
+                <boxGeometry
+
+                    args={[2.58,0.01,0.95]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#00E5FF"
+
+                    emissive="#00E5FF"
+
+                    emissiveIntensity={2}
+
+                />
+
+            </mesh>
+
+            {/* ================= KEYS ================= */}
 
             {
 
-                [...Array(rows)].map((_,row)=>
+                rows.map((cols,row)=>(
 
                     [...Array(cols)].map((_,col)=>(
 
@@ -52,11 +96,11 @@ function Keyboard({
 
                             position={[
 
-                                -1.02 + col * .16,
+                                -1.08 + col * 0.165,
 
-                                .055,
+                                0.055,
 
-                                -.28 + row * .14
+                                -0.32 + row * 0.17
 
                             ]}
 
@@ -66,11 +110,11 @@ function Keyboard({
 
                                 args={[
 
-                                    .11,
+                                    0.12,
 
-                                    .04,
+                                    0.045,
 
-                                    .11
+                                    0.12
 
                                 ]}
 
@@ -78,7 +122,7 @@ function Keyboard({
 
                             <meshStandardMaterial
 
-                                color="#222"
+                                color="#222831"
 
                                 emissive={
 
@@ -90,7 +134,7 @@ function Keyboard({
 
                                 }
 
-                                emissiveIntensity={.45}
+                                emissiveIntensity={0.4}
 
                             />
 
@@ -98,9 +142,51 @@ function Keyboard({
 
                     ))
 
-                )
+                ))
 
             }
+
+            {/* ================= SPACE BAR ================= */}
+
+            <mesh
+
+                position={[
+
+                    0,
+
+                    0.055,
+
+                    0.35
+
+                ]}
+
+            >
+
+                <boxGeometry
+
+                    args={[
+
+                        0.95,
+
+                        0.045,
+
+                        0.12
+
+                    ]}
+
+                />
+
+                <meshStandardMaterial
+
+                    color="#2A2F38"
+
+                    emissive="#00E5FF"
+
+                    emissiveIntensity={0.3}
+
+                />
+
+            </mesh>
 
         </group>
 
