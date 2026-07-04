@@ -2,9 +2,9 @@ import "./Experience.css";
 
 const experiences = [
   {
-    company: "IBM",
+    company: "IBM India Pvt. Ltd.",
     role: "Application Developer",
-    duration: "May 2026 - Present",
+    duration: "May 2026 - Present (Full-time)",
     description:
       "Working on enterprise applications, automation, full-stack development and modern web technologies."
   },
@@ -12,9 +12,25 @@ const experiences = [
   {
     company: "Equitec",
     role: "Software Developer",
-    duration: "Sep 2024",
+    duration: "Sept 2024 (Full-time)",
     description:
       "Worked on JavaScript, React-Native, Bootstrap, .Net and SQL Server based web applications."
+  },
+
+  {
+    company: "Google",
+    role: "GDSC Lead",
+    duration: "2023 - 2024 (Part-time)",
+    description:
+      "Led a team of developers in organizing events, workshops, and hackathons to promote web and mobile development."
+  },
+  {
+    company: "The Linux Foundation",
+    role: "LFX Mentee",
+    duration: "2022 - 2024 (Part-time)", 
+    description:
+      "Contributed to open-source projects, collaborated with developers worldwide, and gained experience in software development and project management."  
+
   }
 ];
 
