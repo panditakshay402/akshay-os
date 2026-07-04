@@ -4,6 +4,8 @@ import Navbar from "./components/layout/Navbar";
 
 import Background from "./components/ui/Background";
 
+import CustomCursor from "./components/ui/CustomCursor";
+
 import Hero from "./sections/Hero/Hero";
 
 import About from "./sections/About/About";
@@ -20,35 +22,37 @@ import Footer from "./sections/Footer/Footer";
 
 function App() {
 
-  return (
+    return (
 
-    <>
+        <>
 
-      <Background />
+            <Background />
 
-      <Navbar />
+            <CustomCursor />
 
-      <Container>
+            <Navbar />
 
-        <Hero />
+            <Container>
 
-        <About />
+                <Hero />
 
-        <Skills />
+                <About />
 
-        <Projects />
+                <Skills />
 
-        <Experience />
+                <Projects />
 
-        <Contact />
+                <Experience />
 
-        <Footer />
+                <Contact />
 
-      </Container>
+                <Footer />
 
-    </>
+            </Container>
 
-  );
+        </>
+
+    );
 
 }
 
