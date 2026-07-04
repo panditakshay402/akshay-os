@@ -1,0 +1,15 @@
+function Container({ children }) {
+  return (
+    <div
+      style={{
+        width: "90%",
+        maxWidth: "1400px",
+        margin: "0 auto",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+export default Container;

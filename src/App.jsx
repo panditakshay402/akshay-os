@@ -1,8 +1,16 @@
+import Container from "./components/common/Container";
+import Navbar from "./components/layout/Navbar";
+import Hero from "./sections/Hero/Hero";
+
 function App() {
   return (
-    <div>
-      <h1>Akshay.OS</h1>
-    </div>
+    <>
+      <Navbar />
+
+      <Container>
+        <Hero />
+      </Container>
+    </>
   );
 }
 
