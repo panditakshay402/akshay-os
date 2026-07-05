@@ -21,7 +21,7 @@ const projects = [
     title: "EtherHealth",
     description:
       "Full Stack Healthcare Management System with operations and authentication.",
-    tech: ["React", "Node.js", "MongoDB", "blockchain integration"],
+    tech: ["JavaScript", "Node.js", "MongoDB", "blockchain integration"],
     github: "https://github.com/panditakshay402/EtherHealth",
     live: "#",
   },

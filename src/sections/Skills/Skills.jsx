@@ -7,7 +7,7 @@ const skills = [
       "HTML5",
       "CSS3",
       "JavaScript",
-      "React",
+      "React-Native",
       "Bootstrap",
       "Tailwind CSS"
     ]
@@ -17,7 +17,6 @@ const skills = [
     tech: [
       "Node.js",
       "Express.js",
-      "Java",
       ".NET",
       "REST API",
       "SQL"

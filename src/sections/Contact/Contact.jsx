@@ -29,7 +29,7 @@ function Contact() {
             <h3>Email</h3>
 
             <p>
-              PanditAkshay402@gmail.com
+              Contact@PanditAkshay.com
             </p>
 
           </div>
@@ -56,30 +56,51 @@ function Contact() {
 
         </div>
 
-        <form className="contact-form">
+        <form className="contact-form" action="https://formspree.io/f/mgojdrpl" method="POST">
 
           <input
             type="text"
+            name="name"
             placeholder="Your Name"
+            required
           />
 
           <input
             type="email"
+            name="email"
             placeholder="Your Email"
+            required
           />
 
           <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            pattern="[0-9]{10}"
+          />
+          
+          <input
             type="text"
+            name="subject"
             placeholder="Subject"
+            required
+          />
+
+          <input
+            type="hidden"
+            name="_subject"
+             value="New Portfolio Contact Form Submission"
           />
 
           <textarea
+            name="message"
             rows="6"
             placeholder="Your Message"
+            required
           ></textarea>
 
           <button type="submit">
-            Send Message
+            Send Message →
           </button>
 
         </form>

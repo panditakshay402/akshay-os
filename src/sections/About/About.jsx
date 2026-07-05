@@ -20,8 +20,7 @@ function About() {
           I'm Akshay Pandit, a Software Engineer currently
           working at IBM. I enjoy building modern,
           responsive and high-performance web
-          applications using React, JavaScript,
-          Three.js and frontend technologies.
+          applications.
         </p>
 
         <p className="about-text">
@@ -34,7 +33,7 @@ function About() {
         <div className="about-stats">
 
           <div className="stat-card">
-            <h3>1+</h3>
+            <h3>2+</h3>
             <p>Years Experience</p>
           </div>
 
@@ -60,7 +59,7 @@ function About() {
 
           <ul>
 
-            <li>React.js</li>
+            <li>React-Native</li>
 
             <li>JavaScript</li>
 
