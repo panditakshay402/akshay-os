@@ -10,7 +10,7 @@ const experiences = [
   },
 
   {
-    company: "Equitec",
+    company: "ETF",
     role: "Software Developer",
     duration: "Sept 2024 (Full-time)",
     description:
