@@ -29,7 +29,7 @@ function Contact() {
             <h3>Email</h3>
 
             <p>
-              Contact@PanditAkshay.com
+              contact@panditakshay.com
             </p>
 
           </div>
@@ -78,7 +78,7 @@ function Contact() {
             placeholder="Phone Number"
             pattern="[0-9]{10}"
           />
-          
+
           <input
             type="text"
             name="subject"
